@@ -1,4 +1,5 @@
-.PHONY: build
-build: 
-	go build -v app/minioUploader
-.DEFAULT_GOAL := build
+secretKey = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+accessKey = "AKIAIOSFODNN7EXAMPLE"
+useSSL = false
+pwd = "/Users/unsmoker/Documents/go/src/myMinio"
+endPoint="127.0.0.1:9000"
