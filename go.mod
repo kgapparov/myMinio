@@ -1,3 +1,3 @@
-module github.com/unsmoker/myMinio
+module github.com/unsmoker/myminio
 
 go 1.14
