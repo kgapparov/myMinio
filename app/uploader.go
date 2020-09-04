@@ -26,7 +26,7 @@ func init() {
 	flag.StringVar(&filePath, "filePath", ".", "path to file upload")
 	flag.StringVar(&fileName, "fileName", "test", "file name to upload")
 	flag.StringVar(&bucketName, "bucketName", "mybucket", "name of bucket")
-	flag.BoolVar(&delete, "delete", false, "delete the local file")
+	flag.BoolVar(&delete, "d", false, "delete the local file")
 }
 
 func main() {
