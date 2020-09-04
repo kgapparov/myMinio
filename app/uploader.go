@@ -18,6 +18,7 @@ var (
 	fileName    string
 	bucketName  string
 	contentType string
+	delete      bool
 )
 
 func init() {
@@ -25,7 +26,9 @@ func init() {
 	flag.StringVar(&filePath, "filePath", ".", "path to file upload")
 	flag.StringVar(&fileName, "fileName", "test", "file name to upload")
 	flag.StringVar(&bucketName, "bucketName", "mybucket", "name of bucket")
+	flag.BoolVar(&delete, "delete", false, "delete the local file")
 }
+
 func main() {
 	flag.Parse()
 	// Creating Configuration parameters from toml file
@@ -77,7 +80,12 @@ func main() {
 	}
 	log.Printf("Successfully uploaded %s of size %d\n", objectName, n)
 
-	fmt.Println(fileName)
+	if delete {
+		err = os.Remove(filePath)
+		if err != nil {
+			log.Fatalln(err)
+		}
+	}
 }
 
 func GetFileContentType(out *os.File) (string, error) {
